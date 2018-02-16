@@ -20,4 +20,12 @@ yum -y install -q \
   gcc \
   gcc-c++ \
   kernel-devel \
-  make
+  make \
+  curl \
+  openssl \
+  software-properties-common \
+  wget \
+  nano \
+  unzip
+
+echo "===========installed everything test ==========="
