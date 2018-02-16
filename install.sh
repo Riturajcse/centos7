@@ -11,7 +11,7 @@ echo "================= Adding some global settings ==================="
 mv gbl_env.sh /etc/profile.d/
 mkdir -p "$HOME/.ssh/"
 mv config "$HOME/.ssh/"
-mv 90forceyes /etc/apt/apt.conf.d/
+mv 90forceyes /etc/yum.conf/
 touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
