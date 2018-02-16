@@ -11,11 +11,12 @@ echo "================= Adding some global settings ==================="
 mv gbl_env.sh /etc/profile.d/
 mkdir -p "$HOME/.ssh/"
 mv config "$HOME/.ssh/"
-mv 90forceyes /etc/yum.conf/
+cat 90forceyes >> /etc/yum.conf/
 touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
 yum -y install -q \
+  epel-release \
   sudo \
   gcc \
   gcc-c++ \
@@ -26,6 +27,18 @@ yum -y install -q \
   software-properties-common \
   wget \
   nano \
-  unzip
+  unzip \
+  openssh-clients \
+  libxslt1-dev \
+  libxml2-dev \
+  htop \
+  gettext \
+  textinfo \
+  rsync \
+  psmisc \
+  vim
 
-echo "===========installed everything test ==========="
+echo "================= Cleaning package lists ==================="
+yum clean expire-cache
+yum autoremove
+
